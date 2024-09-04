@@ -4,12 +4,47 @@
     <%= blog.title %>
   </p>
 
+  <div class="show-p">
+
+  <p class="p">
+  <%= blog.paragaph_1 %>
+  </p>
+
+  <div class="center">
+  <%= image_tag "hero.jpg", height: "500px", width: "500px" %>
+  </div>
+  
+
+
+  </div>
 
  
-  <p class= "show-p">
+ 
+  <div class= "show-p">
    
-    <%= blog.paragraph_2 %>
-  </p>
+   <p class="p"><%= blog.paragraph_2 %></p>
+
+   <div class="center">
+
+   <%= image_tag "image.png", height: "500px", width: "500px" %>
+   </div>
+
+  </div>
+
+
+<div class="show-p">
+
+<p class="p">
+<%= blog.paragraph_3 %>
+</p>
+
+<div class="center">
+<%= image_tag "hero.jpg", height: "500px", width: "500px" %>
+</div>
+
+</div>
+
+    
 
   
 
@@ -18,12 +53,6 @@ body {
   background-color : rgba(0,0,0,0.1)
 }
 
-.center {
-  position : absolute;
-  top : 25%;
-  left:10%;
-  transform : translate(-50% , -50%);
-}
 
 p {
   color :black;
@@ -39,9 +68,25 @@ p {
 }
 
 .show-p {
+  font-weight : 100; 
+  padding : 0rem 2rem
+}
+
+.show-p .p {
+  font-size : 1.4rem;
   color : rgba(0,0,0,0.3);
-  font-weight : 100;
-  font-size : 3rem; 
+  margin-bottom : 4rem;
+}
+
+.center {
+  display : flex;
+  justify-content : center;
+}
+
+.center img {
+  width : 1400px;
+  object-fit : cover;
+  margin-bottom : 4rem;
 }
 
 </style>

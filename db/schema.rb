@@ -10,7 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_08_31_091047) do
+ActiveRecord::Schema[7.0].define(version: 2024_09_04_090050) do
+  create_table "attachments", force: :cascade do |t|
+    t.string "image"
+    t.integer "product_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["product_id"], name: "index_attachments_on_product_id"
+  end
+
   create_table "blogs", force: :cascade do |t|
     t.string "title"
     t.string "paragaph_1"
@@ -20,6 +28,15 @@ ActiveRecord::Schema[7.0].define(version: 2024_08_31_091047) do
     t.string "paragraph_3"
     t.string "image"
     t.json "data"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "products", force: :cascade do |t|
+    t.string "image"
+    t.string "url"
+    t.string "price"
+    t.string "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -34,4 +51,5 @@ ActiveRecord::Schema[7.0].define(version: 2024_08_31_091047) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "attachments", "products"
 end
