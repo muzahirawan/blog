@@ -31,8 +31,10 @@
 
 
 <div class="gallery">
-      <%= product.attachments.each do |index, image| %>
+      <%= product.attachments.each do |image, index| %>
+      <% if image.image.url.present? %>
   <%= image_tag image.image.url, height: "300px", width: "300px", onclick: "openLightbox(); currentSlide(#{index})" %>
+  <% end %>
   <% end %>
     </div>
     
@@ -43,11 +45,15 @@
         
         <div class="lightbox-content">
 
-                <%= product.attachments.each do |index, image| %>
-            <div class="slide">
-  <%= image_tag image.image.url %>
-  <% end %>
-            </div>
+                <%= product.attachments.each do |image| %>
+            
+              <% if image.image.url.present? %>
+              <div class="slide">
+          <%= image_tag image.image.url %>
+           </div>
+             <% end %>
+             <% end %>
+           
            
         </div>
     </div>

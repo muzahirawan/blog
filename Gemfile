@@ -68,7 +68,6 @@ group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
   gem "capybara"
   gem "selenium-webdriver"
-
 end
 
-gem "carrierwave", "~> 3.0"
+gem "carrierwave", "~> 3.0.7"
